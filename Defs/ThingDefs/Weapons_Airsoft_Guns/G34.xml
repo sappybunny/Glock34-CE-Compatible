@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+	<!-- ==================== 6mm BB Plastic ==================== -->
+
+	<DamageDef Name="AirsoftBB">
+
+		<defName>AirsoftBB</defName>
+    	<label>airsoft</label>
+    	<workerClass>DamageWorker_Blunt</workerClass>
+    	<externalViolence>true</externalViolence>
+    	<deathMessage>{0} refused to call their hits.</deathMessage>
+    	<hediff>Bruise</hediff>
+    	<hediffSkin>Bruise</hediffSkin>
+    	<hediffSolid>Bruise</hediffSolid>
+    	<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    	<impactSoundType>Blunt</impactSoundType>
+    	<armorCategory>Blunt</armorCategory>
+    	<overkillPctToDestroyPart>0.4~1.0</overkillPctToDestroyPart>
+    	<bluntInnerHitChance>0</bluntInnerHitChance>
+
+	</DamageDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Sixmm_BB_Plastic</defName>
+		<label>6mm BB (Plastic)</label>
+		<graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+		<projectile>
+			<damageDef>AirsoftBB</damageDef>
+			<damageAmountBase>1</damageAmountBase>
+			<speed>30</speed>
+		</projectile>
+	</ThingDef>
+
+
+	<!-- ==================== Airsoft Glock 34 ==================== -->
+
+	<ThingDef ParentName="BaseHumanMakeableGun">
+		<defName>Airsoft_GThirtyFour</defName>
+		<label>G34 airsoft</label>
+		<!--<basePrice>250</basePrice>-->
+		<description>Airsoft replica of a 4th generation Glock 34.
+			Aftermarket customisation includes green fiber optic sights and extended magazines with anodized baseplates. Also features acustom trigger and slide release.</description>
+		<graphicData>
+			<texPath>G34Alpha</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<uiIconScale>1.5</uiIconScale>
+		<soundInteract>Draw_GThirtyFour</soundInteract>
+		<recipeMaker>
+			<researchPrerequisite>BlowbackOperation</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>4</Crafting>
+			</skillRequirements>
+			<displayPriority>405</displayPriority>
+		</recipeMaker>
+		<weaponTags>
+		</weaponTags>
+		<weaponClasses>
+		</weaponClasses>
+		<statBases>
+			<WorkToMake>2500</WorkToMake>
+			<Mass>1.2</Mass>
+			<AccuracyTouch>0.75</AccuracyTouch>
+			<AccuracyShort>0.60</AccuracyShort>
+			<AccuracyMedium>0.30</AccuracyMedium>
+			<AccuracyLong>0.10</AccuracyLong>
+			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<Steel>10</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+			<Chemfuel>5</Chemfuel>
+		</costList>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Sixmm_BB_Plastic</defaultProjectile>
+				<warmupTime>0.3</warmupTime>
+				<range>15.9</range>
+				<soundCast>Shot_GThirtyFour</soundCast>
+				<muzzleFlashScale>0</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+</Defs>

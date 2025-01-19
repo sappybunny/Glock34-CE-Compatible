@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <ThingDef ParentName="BaseBullet">
+		<defName>6mm_BB_Plastic</defName>
+		<label>6mm BB (Plastic)</label>
+		<graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+		<projectile>
+			<damageType>Bullet</damageType>
+			<DamageAmountBase>1</DamageAmountBase>
+			<Speed>30</Speed>
+		</projectile>
+	</ThingDef>
+
+</Defs>

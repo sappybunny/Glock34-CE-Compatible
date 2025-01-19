@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Airsoft</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		 <operations>
+
+		  
+		<!-- Melee Tools -->
+	
+		  <li Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[@Name="AirsoftNN"]/tools</xpath>
+		  </li>
+		  
+
+          <!--
+
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Musket" or
+			defName="MedTimes_Ranged_Musket_Nan" or
+			defName="MedTimes_Ranged_Arbalest" or 
+			defName="MedTimes_Ranged_Arbalest_Nan" or 
+			defName="MedTimes_Ranged_Crossbow" or
+			defName="MedTimes_Ranged_Crossbow_Nan"					
+			]</xpath>
+			<value>
+			  <tools inherit="false">
+				<li Class="CombatExtended.ToolCE">
+				  <label>stock</label>
+				  <capacities>
+					<li>Blunt</li>
+				  </capacities>
+				  <power>5</power>
+				  <cooldownTime>3.02</cooldownTime>
+				  <chanceFactor>1.33</chanceFactor>
+				  <armorPenetrationBlunt>1.63</armorPenetrationBlunt>
+				  <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+				  <label>barrel</label>
+				  <capacities>
+					<li>Poke</li>
+				  </capacities>
+				  <power>8</power>
+				  <cooldownTime>1.55</cooldownTime>
+				  <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+				  <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+				</li>
+			  </tools>
+			</value>
+		  </li>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Composite" or
+            defName="MedTimes_Ranged_Composite_Nan" or
+            defName="MedTimes_Ranged_Longbow_Nan" or            
+            defName="MedTimes_Ranged_Longbow"            
+            ]</xpath>
+            <value>
+              <tools>
+                <li Class="CombatExtended.ToolCE">
+                  <capacities>
+                    <li>Blunt</li>
+                  </capacities>
+                  <power>3</power>
+                  <cooldownTime>1.76</cooldownTime>
+                  <armorPenetrationBlunt>0.65</armorPenetrationBlunt>
+                </li>
+              </tools>
+            </value>
+          </li>
+
+          -->
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="Airsoft_Glock34"]</xpath>
+			<value>
+			  <tools>
+				<li Class="CombatExtended.ToolCE">
+				  <capacities>
+					<li>Blunt</li>
+				  </capacities>
+				  <power>2</power>
+				  <cooldownTime>1.56</cooldownTime>
+				  <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				</li>
+			  </tools>
+			</value>
+		  </li>
+		 
+
+		  <!-- ========== Glock 34 ========== -->
+		  <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+			<defName>Airsoft_Glock34</defName>
+			<statBases>
+			  <SightsEfficiency>1.2</SightsEfficiency>
+			  <ShotSpread>0.46</ShotSpread>
+			  <SwayFactor>0.82</SwayFactor>
+			  <Bulk>2.2</Bulk>
+			  <RangedWeapon_Cooldown>0.34</RangedWeapon_Cooldown>
+			</statBases>
+			<Properties>
+			  <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+			  <hasStandardCommand>true</hasStandardCommand>
+			  <defaultProjectile>Projectile</defaultProjectile>
+			  <warmupTime>0.4</warmupTime>
+			  <range>12</range>
+			  <soundCast>Shot_Revolver</soundCast>
+              <soundCastTail>GunTail_Light</soundCastTail>
+			</Properties>
+			<AmmoUser>
+			  <magazineSize>27</magazineSize>
+			  <reloadTime>2.3</reloadTime>
+			  <ammoSet>AmmoSet_6mmPlastic</ammoSet>
+			</AmmoUser>
+			<FireModes>
+			  <aiAimMode>AimedShot</aiAimMode>
+			</FireModes>
+			<weaponTags>
+			  <li>CE_OneHandedWeapon</li>
+              <li>CE_Sidearm</li>
+			  <li>SimpleGun</li>
+			</weaponTags>
+		  </li>
+		  <li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="Airsoft_Glock34"]/description</xpath>
+			<value>
+			  <description>Airsoft replica of a 4th generation Glock 34. Aftermarket customisation includes green fiber optic sights, extended magazines with anodized baseplates, with a custom trigger and slide release.</description>
+			</value>
+		  </li>
+		  
+  
+		</operations>
+		</match>
+	</Operation>
+</Patch>
